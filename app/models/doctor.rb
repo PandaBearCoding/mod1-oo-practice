@@ -22,4 +22,4 @@ end
 # example invocation derek = Doctor.new("derek", "internal", 5)
 
 
-#binding.pry
+binding.pry
