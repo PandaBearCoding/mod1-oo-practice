@@ -7,7 +7,7 @@ class Doctor
     def initialize(name, specialty, years=1)
         @name = name
         @specialty = specialty
-        @age = age
+        @years = years
     end 
 
     def say_name
@@ -19,7 +19,7 @@ class Doctor
     end
 end
 
-# example invocation Derek = Doctor.new("derek", "internal", 5)
+# example invocation derek = Doctor.new("derek", "internal", 5)
 
 
-binding.pry
+#binding.pry
