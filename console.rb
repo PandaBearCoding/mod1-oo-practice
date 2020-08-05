@@ -9,7 +9,7 @@ patient_array=[
 ]
 
 patient_array.each do |patient|
-    Patient.new(patient[:nbame],patient[:age])
+    Patient.new(patient[:name], patient[:age])
 end
 
 Patient.all
