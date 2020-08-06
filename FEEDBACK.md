@@ -3,4 +3,6 @@ Classes look good! I was glad to see the additions you made of the examples in c
 
 # Part 2 
 
-Nice! well done! it is clear to me you understand the diffrence between a class and instance method which is awesome! I like that you went above and made some other methods. 
+Nice! well done! only one note: 
+
+1. when you call a priavte mthod within another mothod you cannot call it with self. I would recommend playing around with this yourself to see how its working. 
