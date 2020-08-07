@@ -12,30 +12,39 @@ class Doctor
         @@all << self
     end 
 
+    def say_greeting 
+        puts "It's so nice to see you. How are you feeling today?"
+    end
+    
     def self.find_by_specialty(specialty)
         self.all.filter do |doctor|
         doctor.specialty == specialty
+        end
     end 
-end  
+
+    def patients
+        Patient.all.select do |patient|
+            patient.doctor = self
+        end
+    end 
+
+    def discharge_patient(patient_name)
+        if Patient.all.name == patient_name && Patient.all.doctor == self
+            Patient.all.doctor = nil
+        end
+    end 
+
+    def transfer_patient(patient_name, new_doctor)
+        if Patient.all.name == patient_name && Patient.all.doctor == self
+            Patient.all.doctor = new_doctor
+        end 
+    end 
 
     def self.all
         @@all
     end
 
-    def say_name
-        puts "Hi, my name is #{name}."
-    end 
-
-    def say_greeting 
-        puts "It's so nice to see you. How are you feeling today?"
-    end
-
-    def say_years
-        puts "I have #{years} years in the medical field."
-    end
-
 end
 
-# example invocation derek = Doctor.new("derek", "internal", 5)
 
 binding.pry
