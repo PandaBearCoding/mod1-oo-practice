@@ -1,12 +1,14 @@
 require 'pry'
-require relative "./app/models/doctor.rb"
-require_relative "./app/models/patient.rb"
+require_relative "./app/models/doctor"
+require_relative "./app/models/patient"
+require_relative "./app/models/appointments"
 
-patient_array=[
-    {name: madeline, age: "25"}
-    {name: val, age: "29"}
-    {name: alex, age: "35"}
-    {name: anthony, age: "27"}
+
+patient_array = [
+    {name: "madeline", age: "25"},
+    {name: "val", age: "29"},
+    {name: "alex", age: "35"},
+    {name: "anthony", age: "27"}
 ]
 
 madeline = Patient.new("madeline", 25)
@@ -14,9 +16,15 @@ val = Patient.new("val", 29)
 alex = Patient.new("alex", 35)
 anthony = Patient.new("anthony", 27)
 
+
+binding.pry 
+
 patient_array.each do |patient|
     Patient.new(patient[:name], patient[:age])
 end
+
+#patient.all
+#val.name
 
 #Patient.all
 

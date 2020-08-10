@@ -22,28 +22,47 @@ class Doctor
         end
     end 
 
-    def patients
-        Patient.all.select do |patient|
-            patient.doctor = self
-        end
-    end 
+    #def patients
+        #Patient.all.select do |patient|
+            #patient.doctor = self
+        #end
+    #end
 
-    def discharge_patient(patient_name)
-        if Patient.all.name == patient_name && Patient.all.doctor == self
-            Patient.all.doctor = nil
-        end
-    end 
+    #def discharge_patient(patient_name)
+        #if Patient.all.name == patient_name && Patient.all.doctor == self
+            #Patient.all.doctor = nil
+        #end
+    #end 
 
-    def transfer_patient(patient_name, new_doctor)
-        if Patient.all.name == patient_name && Patient.all.doctor == self
-            Patient.all.doctor = new_doctor
-        end 
-    end 
+    #def transfer_patient(patient_name, new_doctor)
+        #if Patient.all.name == patient_name && Patient.all.doctor == self
+            #Patient.all.doctor = new_doctor
+        #end 
+    #end 
 
     def self.all
         @@all
     end
 
+    ## Will retrieve all relationships tracked
+    ## Will go through the doctor_patient instance to find all appts
+    ## Then it will query patients through doctor_patient
+
+    def doctor_patients
+        DoctorPatient.all.select do |dp|
+            dp.doctor == self
+        end 
+    end
+
+    ## Will use the doctor_patients array to get individual patients 
+
+    def appointments
+        doctor_patients.map do |dp|
+            dp.patient
+        end
+    end
+
+    binding.pry
 end
 
 

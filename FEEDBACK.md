@@ -5,4 +5,4 @@ Classes look good! I was glad to see the additions you made of the examples in c
 
 Nice! well done! only one note: 
 
-1. when you call a priavte mthod within another mothod you cannot call it with self. I would recommend playing around with this yourself to see how its working. 
+When you call a private method within another method you cannot call it with self. I would recommend playing around with this yourself to see how its working. 
